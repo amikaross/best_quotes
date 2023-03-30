@@ -1,3 +1,9 @@
+PATH
+  remote: ../rulers
+  specs:
+    rulers (0.0.2)
+      rack (~> 2.0, >= 2.0.8)
+
 GEM
   remote: https://rubygems.org/
   specs:
@@ -7,15 +13,13 @@ GEM
       coderay (~> 1.1)
       method_source (~> 1.0)
     rack (2.2.6.4)
-    rulers (0.0.2)
-      rack (~> 2.0, >= 2.0.8)
 
 PLATFORMS
   x86_64-darwin-21
 
 DEPENDENCIES
   pry
-  rulers
+  rulers!
 
 BUNDLED WITH
    2.3.13
