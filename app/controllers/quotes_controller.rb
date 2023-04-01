@@ -2,7 +2,10 @@ require 'rulers'
 
 class QuotesController < Rulers::Controller 
   def a_quote 
-    render(:a_quote, :noun => :winking)
+    @thing = "thing"
+    @stuff = "stuff"
+    @noun = "blinkING"
+    render(:a_quote)
   end
 
   def exception
