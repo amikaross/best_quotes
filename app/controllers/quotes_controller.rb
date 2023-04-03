@@ -1,6 +1,12 @@
 require 'rulers'
 
 class QuotesController < Rulers::Controller 
+  def index 
+    @quotes = FileModel.all 
+
+    render(:index)
+  end
+
   def a_quote 
     @thing = "thing"
     @stuff = "stuff"
