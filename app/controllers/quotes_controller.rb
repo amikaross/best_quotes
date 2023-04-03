@@ -14,6 +14,16 @@ class QuotesController < Rulers::Controller
     render(:a_quote)
   end
 
+  def new_quote
+    attrs = {
+      "submitter" => "web_user",
+      "quote" => "A picture is worth one k pixels",
+      "attribution" => "Me"
+    }
+    @obj = FileModel.create(attrs)
+    render(:quote)
+  end
+
   def exception
     raise "It's a bad one!"
   end
