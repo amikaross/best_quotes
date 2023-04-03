@@ -24,6 +24,23 @@ class QuotesController < Rulers::Controller
     render(:quote)
   end
 
+  def update
+    raise "Only POST to this route!" unless @env["REQUEST_METHOD"] == "POST"
+
+    body = env["rack.input"].read
+    astr = body.split("&")
+    params = {}
+    astr.each do |a|
+      name, val = a.split("=")
+      params[name] = val
+    end
+    quote = FileModel.find(params["id"].to_i)
+    quote["submitter"] = params["submitter"]
+    quote.save
+    @obj = quote 
+    render(:quote)
+  end
+
   def exception
     raise "It's a bad one!"
   end
