@@ -11,4 +11,10 @@ class QuotesController < Rulers::Controller
   def exception
     raise "It's a bad one!"
   end
+
+  def quote_1
+    quote_1 = FileModel.find(1)
+    @obj = quote_1
+    render(:quote)
+  end
 end
