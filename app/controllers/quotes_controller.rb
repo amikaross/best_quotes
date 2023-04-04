@@ -50,4 +50,10 @@ class QuotesController < Rulers::Controller
     @obj = quote_1
     render(:quote)
   end
+
+  def quotes_by_submitter
+    submitter = File.split(env["PATH_INFO"])[-1].gsub("%20", " ")
+    @quotes = FileModel.find_all_by_submitter(submitter)
+    render(:index)
+  end
 end
