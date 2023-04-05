@@ -15,10 +15,14 @@ STDERR.puts MyTable.schema.inspect
 #   puts "Found title #{mt_id["title"]}."
 # end
 
-mt = MyTable.create("title" => "I saw it again!")
-mt["title"] = "I really did!"
-mt.save!
+# mt = MyTable.create("title" => "I saw it again!")
+# mt["title"] = "I really did!"
+# mt.save!
 
-mt2 = MyTable.find(mt["id"])
+# mt2 = MyTable.find(mt["id"])
 
-puts "Title: #{mt2["title"]}"
+# puts "Title: #{mt2["title"]}"
+
+all_rows = MyTable.all
+
+require 'pry'; binding.pry
