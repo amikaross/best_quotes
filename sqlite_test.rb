@@ -23,6 +23,15 @@ STDERR.puts MyTable.schema.inspect
 
 # puts "Title: #{mt2["title"]}"
 
-all_rows = MyTable.all
+# all_rows = MyTable.all
+
+mt = MyTable.create("title" => "I saw it again!")
+mt.title = "I really did!"
+mt.save!
+
+mt2 = MyTable.find(mt.id)
+puts "Title: #{mt2.title}"
+
+
 
 require 'pry'; binding.pry
